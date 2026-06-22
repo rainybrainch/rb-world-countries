@@ -1,5 +1,5 @@
 export const TOPIC_META: Record<string, { icon: string; color: string; shortName: string; tagline: string }> = {
-  'topic-english': { icon: '🇬🇧', color: '#3B82F6', shortName: 'English', tagline: 'Learn English with ALL ACADEMY' },
+  'topic-english': { icon: '🇬🇧', color: '#3B82F6', shortName: 'English', tagline: 'Englishを学ぼう' },
   'topic-japanese': { icon: '🇯🇵', color: '#EF4444', shortName: '日本語', tagline: '日本語を学ぼう' },
   'topic-chinese': { icon: '🇨🇳', color: '#DC2626', shortName: '中国語', tagline: '中国語を学ぼう' },
   'topic-korean': { icon: '🇰🇷', color: '#F59E0B', shortName: '한국어', tagline: '韓国語を学ぼう' },

@@ -4,7 +4,7 @@ import { Category } from '@/types';
 const englishA1: Category = {
   id: 'cat-eng-a1',
   title: 'English - Beginner',
-  description: 'English language learning at beginner level (A1).',
+  description: '英語学習（初級レベル A1）。',
   level: 'A1',
   topicCategoryId: 'topic-english',
   courses: [{
@@ -94,7 +94,7 @@ const englishA1: Category = {
 const englishA2: Category = {
   id: 'cat-eng-a2',
   title: 'English - Elementary',
-  description: 'English language learning at elementary level (A2).',
+  description: '英語学習（初中級レベル A2）。',
   level: 'A2',
   topicCategoryId: 'topic-english',
   courses: [{
@@ -139,7 +139,7 @@ const englishA2: Category = {
 const englishB1: Category = {
   id: 'cat-eng-b1',
   title: 'English - Intermediate',
-  description: 'English language learning at intermediate level (B1).',
+  description: '英語学習（中級レベル B1）。',
   level: 'B1',
   topicCategoryId: 'topic-english',
   courses: [{
@@ -169,7 +169,7 @@ const englishB1: Category = {
 const englishB2: Category = {
   id: 'cat-eng-b2',
   title: 'English - Upper-Intermediate',
-  description: 'English language learning at upper-intermediate level (B2).',
+  description: '英語学習（中上級レベル B2）。',
   level: 'B2',
   topicCategoryId: 'topic-english',
   courses: [{
