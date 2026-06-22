@@ -1,6 +1,7 @@
 'use client';
 
 import { getCountryById, countries } from '@/data/countries';
+import EconomicChart from '@/components/EconomicChart';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -109,14 +110,18 @@ export default async function CountryPage({ params }: CountryPageProps) {
               の政治体制、政府構造、主要な政治家についての情報が追加される予定です。
             </p>
           </div>
-          <div className="bg-white p-8 rounded-lg border border-gray-200">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">経済</h2>
-            <p className="text-gray-600">
-              このセクションはまだ実装されていません。今後、{countryData.name}
-              の経済、主要産業、貿易についての情報が追加される予定です。
-            </p>
-          </div>
         </div>
+
+        {/* Economic Section */}
+        {countryData.economicData && (
+          <div className="bg-white p-8 rounded-lg border border-gray-200 mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">経済データ</h2>
+            <EconomicChart
+              data={countryData.economicData}
+              countryName={countryData.name}
+            />
+          </div>
+        )}
 
         <div className="bg-white p-8 rounded-lg border border-gray-200 mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">文化</h2>

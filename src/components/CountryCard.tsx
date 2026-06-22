@@ -20,6 +20,31 @@ export default function CountryCard({ country }: { country: Country }) {
         <h3 className="text-xl font-bold mb-2">{country.name}</h3>
         <p className="text-gray-600 text-sm mb-3">{country.englishName}</p>
         <p className="text-gray-700 text-sm mb-4">{country.description}</p>
+
+        {/* Economic Summary */}
+        {country.economicData?.gdpGrowthRates && country.economicData.gdpGrowthRates.length > 0 && (
+          <div className="mb-4 p-3 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border border-blue-200">
+            <p className="text-xs text-gray-600 font-semibold mb-2">最新経済指標</p>
+            <div className="text-sm space-y-1">
+              {country.economicData.gdpGrowthRates[country.economicData.gdpGrowthRates.length - 1] && (
+                <p className="text-gray-800">
+                  📊 GDP成長率: <span className="font-bold">{country.economicData.gdpGrowthRates[country.economicData.gdpGrowthRates.length - 1].rate}%</span>
+                </p>
+              )}
+              {country.economicData.inflation !== undefined && (
+                <p className="text-gray-800">
+                  💹 インフレ: <span className="font-bold">{country.economicData.inflation}%</span>
+                </p>
+              )}
+              {country.economicData.unemploymentRate !== undefined && (
+                <p className="text-gray-800">
+                  💼 失業率: <span className="font-bold">{country.economicData.unemploymentRate}%</span>
+                </p>
+              )}
+            </div>
+          </div>
+        )}
+
         <div className="flex flex-wrap gap-2">
           {country.categories.map((cat) => (
             <span

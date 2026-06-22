@@ -96,6 +96,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Language Academy Link Section */}
+      <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-2xl p-10 text-center shadow-lg">
+            <div className="flex justify-center mb-4">
+              <span className="text-5xl">🗣️</span>
+            </div>
+            <h3 className="text-3xl font-bold mb-4">Language Academy</h3>
+            <p className="text-xl opacity-90 mb-6">
+              世界の言語を体系的に学べるプラットフォーム
+            </p>
+            <div className="mb-6 text-sm opacity-75 space-y-1">
+              <p>• 12言語 + 手話で世界とつながる</p>
+              <p>• A1～C2レベルの充実したカリキュラム</p>
+              <p>• Country Academy と連携して、言語と文化を同時に学習</p>
+            </div>
+            <Link
+              href="https://rb-world-academy.vercel.app"
+              className="inline-block px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-blue-50 transition-colors text-lg"
+            >
+              言語学習をはじめる →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Roadmap Section */}
       <section className="bg-white border-t border-gray-200 py-16">
         <div className="max-w-6xl mx-auto px-4">
