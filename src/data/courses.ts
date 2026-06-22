@@ -17214,3 +17214,6 @@ export function getAdjacentLessons(courseId: string, lessonId: string) {
     } : null,
   };
 }
+
+// Alias for backward compatibility
+export const categories = allCategories;
