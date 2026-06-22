@@ -13,7 +13,7 @@ export const topicCategories: TopicCategory[] = [
     id: 'topic-english',
     title: 'English',
     description: 'English language learning at A1, A2, and B1 levels.',
-    image: '/images/categories/english.webp',
+    image: '/images/languages/english.png',
     genreId: 'g-language',
   },
   {
