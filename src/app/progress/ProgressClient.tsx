@@ -58,7 +58,7 @@ export default function ProgressClient() {
       </div>
 
       {/* Quote of the day */}
-      <MoneyQuote />
+      {/* Milestone */}
       {/* Milestone */}
       <div className="mb-6">
         <MilestoneCard />
