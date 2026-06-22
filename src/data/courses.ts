@@ -1989,57 +1989,140 @@ const jpna1: Category = {
       lessons: [
         {
           id: 'l1',
-          title: 'Lesson 1: Topic 1',
+          title: 'Lesson 1: 挨拶と自己紹介',
           duration: '8:00',
           videoId: '',
           isPremium: false,
-          checkItems: ['Topic 1'],
-          sections: [],
+          checkItems: ['挨拶', '名前', '敬語'],
+          sections: [
+            { type: 'heading', level: 2, content: '日本語の挨拶と時間帯' },
+            { type: 'text', content: '日本語の挨拶は時間や場面によって異なります。「おはようございます」「こんにちは」「こんばんは」など、相手や状況に応じた挨拶を学びます。' },
+            { type: 'glossary', terms: [
+              { term: 'おはようございます', definition: '朝の挨拶・敬語形' },
+              { term: 'こんにちは', definition: '昼間の挨拶' },
+              { term: 'こんばんは', definition: '夜間の挨拶' },
+              { term: 'おやすみなさい', definition: '就寝時の挨拶' },
+              { term: 'さようなら', definition: '別れの挨拶' }
+            ] },
+            { type: 'highlight-box', title: '挨拶の例文', items: ['おはようございます。', 'こんにちは。元気ですか。', 'こんばんは。今日はお疲れ様でした。', 'さようなら。また明日。'] },
+            { type: 'practice', question: '適切な挨拶を選びましょう', auxiliaryPrompt: '時間帯と場面に応じた挨拶を練習します', answer: '朝・昼・夜・別れの場面で、それぞれ適切な挨拶を3つ以上言ってください。' },
+            { type: 'heading', level: 2, content: '名前の言い方と聞き方' },
+            { type: 'text', content: '自分の名前を述べる方法と、他人の名前を丁寧に聞く方法を学びます。' },
+            { type: 'glossary', terms: [
+              { term: '私の名前は〜です', definition: '名前を自己紹介する' },
+              { term: 'あなたの名前は？', definition: '相手の名前を聞く（カジュアル）' },
+              { term: 'お名前は？', definition: '相手の名前を聞く（敬語）' },
+              { term: '〜さん', definition: '敬称・親友や同輩に使う' },
+              { term: '〜さま', definition: '敬称・相手を敬う時' }
+            ] },
+            { type: 'highlight-box', title: '名前の自己紹介例', items: ['私はジョンです。', '私の名前は田中太郎です。', 'お忙しいところ失礼ですが、お名前をお聞きしてもよろしいでしょうか。'] },
+            { type: 'practice', question: '自己紹介を作成してください', auxiliaryPrompt: '自分の名前と簡単な情報を含めた自己紹介文を作ります', answer: '「私の名前は〜です。〜から来ました。」という形式で3文以上の自己紹介を作成してください。' }
+          ],
         },
         {
           id: 'l2',
-          title: 'Lesson 2: Topic 2',
+          title: 'Lesson 2: 日常の活動',
           duration: '8:00',
           videoId: '',
           isPremium: false,
-          checkItems: ['Topic 2'],
-          sections: [],
+          checkItems: ['毎日の活動', '時間表現'],
+          sections: [
+            { type: 'heading', level: 2, content: '毎日の活動と時間' },
+            { type: 'text', content: '日常生活で行う活動について、現在形を使って説明する練習をします。「〜ます」という敬語形を使う文法が中心となります。' },
+            { type: 'glossary', terms: [
+              { term: '起きます', definition: '朝目を覚ます' },
+              { term: '朝食を食べます', definition: '朝ご飯を食べる' },
+              { term: '仕事をします', definition: '働く' },
+              { term: '昼食を食べます', definition: 'お昼を食べる' },
+              { term: '寝ます', definition: '眠る' }
+            ] },
+            { type: 'highlight-box', title: '毎日の活動の例文', items: ['私は毎朝7時に起きます。', '朝食を食べてから仕事に行きます。', '12時に昼食を食べます。', '夜10時に寝ます。'] },
+            { type: 'practice', question: 'あなたの1日のスケジュールを説明してください', auxiliaryPrompt: '朝から夜まで、時間と活動を組み合わせて説明します', answer: '朝起きる時間、仕事の時間、食事の時間、寝る時間を「〜時に〜ます」という形で5文以上説明してください。' }
+          ],
         },
         {
           id: 'l3',
-          title: 'Lesson 3: Topic 3',
+          title: 'Lesson 3: 曜日と季節',
           duration: '8:00',
           videoId: '',
           isPremium: false,
-          checkItems: ['Topic 3'],
-          sections: [],
+          checkItems: ['曜日', '季節'],
+          sections: [
+            { type: 'heading', level: 2, content: '曜日と週間のスケジュール' },
+            { type: 'text', content: '日本語で曜日を正確に表現する方法を学びます。「月曜日」「日曜日」など、1週間の計画や習慣を説明する能力を養います。' },
+            { type: 'glossary', terms: [
+              { term: '月曜日', definition: 'げつようび・Monday' },
+              { term: '火曜日', definition: 'かようび・Tuesday' },
+              { term: '水曜日', definition: 'すいようび・Wednesday' },
+              { term: '木曜日', definition: 'もくようび・Thursday' },
+              { term: '日曜日', definition: 'にちようび・Sunday' }
+            ] },
+            { type: 'highlight-box', title: '曜日と活動の例文', items: ['月曜日から金曜日まで仕事があります。', '土曜日は買い物に行きます。', '日曜日は家族と過ごします。', '毎週水曜日にジムに行きます。'] },
+            { type: 'practice', question: '1週間のスケジュールを説明してください', auxiliaryPrompt: '各曜日の活動を時間付きで説明します', answer: '月曜日から日曜日まで、「〜曜日は〜をします」という形式で説明してください。' }
+          ],
         },
         {
           id: 'l4',
-          title: 'Lesson 4: Topic 4',
+          title: 'Lesson 4: 家族と趣味',
           duration: '8:00',
           videoId: '',
           isPremium: false,
-          checkItems: ['Topic 4'],
-          sections: [],
+          checkItems: ['家族', '趣味'],
+          sections: [
+            { type: 'heading', level: 2, content: '家族の紹介' },
+            { type: 'text', content: '日本語では、自分の家族と他人の家族で異なる表現を使います。自分の家族に対しては敬語を使わず、他人の家族には敬語を付けます。' },
+            { type: 'glossary', terms: [
+              { term: '父', definition: 'ちち・自分の父親' },
+              { term: 'お父さん', definition: '他人の父親' },
+              { term: '母', definition: 'はは・自分の母親' },
+              { term: 'お母さん', definition: '他人の母親' },
+              { term: '姉', definition: 'あね・自分の姉' }
+            ] },
+            { type: 'highlight-box', title: '家族紹介の例文', items: ['私の父は医者です。', 'あなたのお母さんはどこにいますか。', '家族は4人です。', '兄が東京に住んでいます。'] },
+            { type: 'practice', question: 'あなたの家族を紹介してください', auxiliaryPrompt: '家族の人数、関係、職業を含める練習です', answer: '「私の家族は〜人です。」という形式で、各家族メンバーについて3文以上説明してください。' }
+          ],
         },
         {
           id: 'l5',
-          title: 'Lesson 5: Topic 5',
+          title: 'Lesson 5: 食事と好み',
           duration: '8:00',
           videoId: '',
           isPremium: false,
-          checkItems: ['Topic 5'],
-          sections: [],
+          checkItems: ['食べ物', '好み'],
+          sections: [
+            { type: 'heading', level: 2, content: '食べ物と飲料の名前' },
+            { type: 'text', content: '日本の食文化を理解するために、一般的な食べ物と飲料の名前を学びます。和食の代表的な料理から、毎日の食事で見かけるものまで、幅広い語彙を身につけます。' },
+            { type: 'glossary', terms: [
+              { term: 'ご飯', definition: 'ごはん・米食' },
+              { term: 'みそ汁', definition: 'みそしる・日本の典型的なスープ' },
+              { term: 'てんぷら', definition: 'てんぷら・揚げた野菜' },
+              { term: '寿司', definition: 'すし・握った米に具を乗せたもの' },
+              { term: 'お茶', definition: 'おちゃ・日本の伝統飲料' }
+            ] },
+            { type: 'highlight-box', title: '食べ物の例文', items: ['私はご飯が好きです。', '朝食は卵焼きとみそ汁です。', '日本料理は美味しいです。', 'コーヒーか紅茶のどちらが好きですか。'] },
+            { type: 'practice', question: 'あなたの好きな食べ物について話してください', auxiliaryPrompt: '好みの食べ物と理由を含めて説明する練習です', answer: '「私は〜が好きです。なぜなら〜です。」という形式で、好きな食べ物3つを理由付きで説明してください。' }
+          ],
         },
         {
           id: 'l6',
-          title: 'Lesson 6: Topic 6',
+          title: 'Lesson 6: 買い物と価格',
           duration: '8:00',
           videoId: '',
           isPremium: false,
-          checkItems: ['Topic 6'],
-          sections: [],
+          checkItems: ['買い物', '価格'],
+          sections: [
+            { type: 'heading', level: 2, content: '買い物での基本表現' },
+            { type: 'text', content: '買い物をする時に必要な基本的な会話表現を学びます。価格の確認、商品の説明、支払い方法などの表現を習得します。' },
+            { type: 'glossary', terms: [
+              { term: 'いくらですか', definition: '価格はいくらですか' },
+              { term: '円', definition: 'えん・日本の通貨単位' },
+              { term: '安いです', definition: 'やすいです・価格が低い' },
+              { term: '高いです', definition: 'たかいです・価格が高い' },
+              { term: 'クレジットカード', definition: 'くれじっとかーど・支払い方法' }
+            ] },
+            { type: 'highlight-box', title: '買い物の例文', items: ['これはいくらですか。', '1000円ですか。', '何色がありますか。', 'クレジットカードで支払えますか。'] },
+            { type: 'practice', question: '店での簡単な買い物会話をしてください', auxiliaryPrompt: '商品の確認と価格について質問します', answer: '「これはいくらですか」「〜色がありますか」「割引がありますか」という質問を店員さんに向かって3つ言ってください。' }
+          ],
         },
       ],
     },

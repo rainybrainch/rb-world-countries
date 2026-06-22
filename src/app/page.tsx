@@ -1,149 +1,162 @@
-export const revalidate = 0;
+'use client';
+
 import Link from 'next/link';
-import { categories } from '@/data/courses';
-import { topicCategories } from '@/data/structure';
-import HomeStats from '@/components/HomeStats';
-import NextLessonCard from '@/components/NextLessonCard';
-import MilestoneCard from '@/components/MilestoneCard';
-import WelcomeBack from '@/components/WelcomeBack';
-import DailyGoalCard from '@/components/DailyGoalCard';
-import DailyTip from '@/components/DailyTip';
-import RecentLessons from '@/components/RecentLessons';
-import StreakWarning from '@/components/StreakWarning';
-import AllCoursesComplete from '@/components/AllCoursesComplete';
-import FirstVisitGuide from '@/components/FirstVisitGuide';
-import WeeklyGoalCard from '@/components/WeeklyGoalCard';
-import HeroCtaButton from '@/components/HeroCtaButton';
-import HomeCourseGrid from '@/components/HomeCourseGrid';
-import MyCoursesList from '@/components/MyCoursesList';
-import RandomLesson from '@/components/RandomLesson';
+import { countries } from '@/data/countries';
+import CountryCard from '@/components/CountryCard';
 
 export default function HomePage() {
-  const totalLessons = categories.reduce(
-    (a, cat) => a + cat.courses.reduce((b, c) => b + c.lessons.filter(l => !l.isComingSoon).length, 0), 0
-  );
   return (
-    <div className="max-w-xl mx-auto px-4 py-6 space-y-7">
+    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      {/* Header */}
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <nav className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+          <h1 className="text-2xl font-bold text-gray-900">Country Academy</h1>
+          <Link
+            href="/countries"
+            className="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            国一覧を見る
+          </Link>
+        </nav>
+      </header>
 
-      {/* ── Hero ── */}
-      <div
-        className="rounded-2xl p-5 relative overflow-hidden"
-        style={{
-          background: 'var(--mb-dark)',
-          border: '2px solid var(--mb-dark)',
-          boxShadow: '5px 5px 0 var(--mb-gold)',
-        }}
-      >
-        {/* Background accent blob */}
-        <div
-          className="absolute -top-8 -right-8 w-32 h-32 rounded-full opacity-20"
-          style={{ background: 'var(--mb-gold)' }}
-        />
-        <div
-          className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full opacity-10"
-          style={{ background: 'var(--mb-sky)' }}
-        />
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-5xl font-bold mb-4">Country Academy へようこそ</h2>
+          <p className="text-xl opacity-90 mb-8">
+            世界の国々を政治、経済、文化の視点から学べるプラットフォーム
+          </p>
+          <Link
+            href="/countries"
+            className="inline-block px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 transition-colors"
+          >
+            探索を始める
+          </Link>
+        </div>
+      </section>
 
-        <div className="relative">
-          <div className="flex items-center gap-2 mb-3 flex-wrap">
-            <div
-              className="inline-block text-[9px] font-bold tracking-[3px] px-2.5 py-1 rounded"
-              style={{ background: 'rgba(245,200,66,0.15)', color: 'var(--mb-gold)', border: '1px solid rgba(245,200,66,0.3)', fontFamily: "'Zen Maru Gothic', sans-serif" }}
-            >
-              ALL ACADEMY
+      {/* Overview Section */}
+      <section className="bg-white border-b border-gray-200 py-12">
+        <div className="max-w-6xl mx-auto px-4">
+          <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            このアプリについて
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="text-5xl mb-4">🌍</div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">
+                {countries.length} ヶ国のプロフィール
+              </h4>
+              <p className="text-gray-600">
+                アジア、ヨーロッパ、アメリカ大陸を代表する国々が実装済み
+              </p>
             </div>
-            <div className="flex items-center gap-1.5 px-2 py-1 rounded-full" style={{ background: 'rgba(76,175,125,0.15)', border: '1px solid rgba(76,175,125,0.3)' }}>
-              <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: 'var(--mb-green)', animation: 'pulse 2s infinite' }} />
-              <span className="text-[9px] font-bold" style={{ color: 'var(--mb-green)', fontFamily: "'Zen Maru Gothic', sans-serif" }}>
-                {totalLessons}講義 公開中
-              </span>
+            <div className="text-center">
+              <div className="text-5xl mb-4">📚</div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">
+                3つの視点
+              </h4>
+              <p className="text-gray-600">
+                政治体制、経済状況、文化的特徴から各国を学ぶ
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl mb-4">🗣️</div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">
+                言語学習と連携
+              </h4>
+              <p className="text-gray-600">
+                Language Academy との組み合わせで深い理解へ
+              </p>
             </div>
           </div>
-          <h1
-            className="text-2xl leading-tight mb-2"
-            style={{ fontFamily: "'Dela Gothic One', sans-serif", color: 'white' }}
-          >
-            11言語を学ぼう。<br />
-            <span style={{ color: 'var(--mb-gold)' }}>世界と繋がろう。</span>
-          </h1>
-          <p
-            className="text-xs leading-relaxed"
-            style={{ color: 'rgba(255,255,255,0.55)', fontFamily: "'Zen Maru Gothic', sans-serif" }}
-          >
-            英語・日本語・中国語・韓国語・ドイツ語・フランス語・イタリア語・アラビア語・ポルトガル語・古典中国語。全{topicCategories.length}言語・{totalLessons}講義を楽しく学ぼう。
+        </div>
+      </section>
+
+      {/* Featured Countries */}
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <h3 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            注目の国
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {countries.slice(0, 6).map((country) => (
+              <CountryCard key={country.id} country={country} />
+            ))}
+          </div>
+          <div className="text-center">
+            <Link
+              href="/countries"
+              className="inline-block px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              すべての国を見る → {countries.length} ヶ国
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Roadmap Section */}
+      <section className="bg-white border-t border-gray-200 py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            開発ロードマップ
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-6 bg-blue-50 border border-blue-200 rounded-lg">
+              <h4 className="text-xl font-bold text-blue-900 mb-3">
+                Phase 1: 基本枠組み（進行中）
+              </h4>
+              <ul className="space-y-2 text-blue-800">
+                <li>✓ 国データスキーマ構築</li>
+                <li>✓ 国別プロフィールページテンプレート</li>
+                <li>✓ 国カード表示コンポーネント</li>
+                <li>✓ 国一覧ページ＆フィルター機能</li>
+              </ul>
+            </div>
+            <div className="p-6 bg-gray-100 border border-gray-300 rounded-lg">
+              <h4 className="text-xl font-bold text-gray-900 mb-3">
+                Phase 2〜5: コンテンツ充実（予定）
+              </h4>
+              <ul className="space-y-2 text-gray-700">
+                <li>・政治セクション実装（政府体制、歴史）</li>
+                <li>・経済セクション実装（産業、貿易）</li>
+                <li>・文化セクション実装（言語、伝統）</li>
+                <li>・対応国の追加（全10国→50国以上）</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-blue-600 text-white py-16">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h3 className="text-3xl font-bold mb-4">さあ、世界を探索しましょう</h3>
+          <p className="text-xl opacity-90 mb-8">
+            Country Academy で、世界中の国々について学び、異文化への理解を深めます
           </p>
-
-          <HeroCtaButton />
+          <Link
+            href="/countries"
+            className="inline-block px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 transition-colors"
+          >
+            今すぐ始める
+          </Link>
         </div>
-      </div>
+      </section>
 
-      {/* ── アプリグリッド ── */}
-      <div>
-        <div className="flex items-center gap-2 mb-3">
-          <div className="w-1.5 h-4 rounded-full" style={{ background: 'var(--mb-green)' }} />
-          <h2 className="text-sm font-bold tracking-[2px]" style={{ color: 'rgba(26,26,46,0.5)', fontFamily: "'Zen Maru Gothic', sans-serif" }}>
-            アプリ
-          </h2>
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-400 py-8">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <p className="mb-4">
+            Country Academy — Language Academy との連携で、言語と文化を同時に学ぶ
+          </p>
+          <p className="text-sm">
+            Part of{' '}
+            <span className="text-white font-semibold">All Academy Hub</span>
+          </p>
         </div>
-
-        <HomeCourseGrid categories={categories} />
-      </div>
-
-      {/* ── 全講義制覇 ── */}
-      <AllCoursesComplete />
-
-      {/* ── ストリーク警告 ── */}
-      <StreakWarning />
-
-      {/* ── ウェルカムバック ── */}
-      <WelcomeBack />
-
-      {/* ── マイコース ── */}
-      <MyCoursesList />
-
-      {/* ── 次のレッスン ── */}
-      <div>
-        <div className="flex items-center gap-2 mb-3">
-          <div className="w-1.5 h-4 rounded-full" style={{ background: 'var(--mb-sky)' }} />
-          <span className="text-xs font-bold tracking-[2px]" style={{ color: 'rgba(26,26,46,0.5)', fontFamily: "'Zen Maru Gothic', sans-serif" }}>
-            次の講義
-          </span>
-        </div>
-        <NextLessonCard />
-        <div className="mt-3">
-          <RandomLesson />
-        </div>
-      </div>
-
-      {/* ── 今日の目標 ── */}
-      <DailyGoalCard />
-
-      {/* ── 今日のヒント ── */}
-      <DailyTip />
-
-      {/* ── 今週の目標 ── */}
-      <WeeklyGoalCard />
-
-      {/* ── Stats ── */}
-      <div>
-        <div className="flex items-center gap-2 mb-3">
-          <div className="w-1.5 h-4 rounded-full" style={{ background: 'var(--mb-gold)' }} />
-          <span className="text-xs font-bold tracking-[2px]" style={{ color: 'rgba(26,26,46,0.5)', fontFamily: "'Zen Maru Gothic', sans-serif" }}>
-            マイ実績
-          </span>
-        </div>
-        <HomeStats />
-      </div>
-
-      {/* ── マイルストーン ── */}
-      <MilestoneCard />
-
-
-      <RecentLessons />
-
-      {/* ── はじめての方へ（トグル） ── */}
-      <FirstVisitGuide />
-
-    </div>
+      </footer>
+    </main>
   );
 }
