@@ -1,3 +1,4 @@
+export const revalidate = 0;
 import type { Metadata } from 'next';
 import { Dela_Gothic_One, Zen_Maru_Gothic } from 'next/font/google';
 import './globals.css';
