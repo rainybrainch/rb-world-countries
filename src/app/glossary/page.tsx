@@ -3,8 +3,8 @@ import { categories } from '@/data/courses';
 import GlossaryClient from './GlossaryClient';
 
 export const metadata: Metadata = {
-  title: '用語集 | マネぼうアカデミー',
-  description: '株式・投資・家計管理に関する用語を一覧で確認できます。',
+  title: '用語集 | ALL ACADEMY',
+  description: '言語学習に関する用語を一覧で確認できます。',
 };
 
 interface GlossaryEntry {

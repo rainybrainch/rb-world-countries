@@ -6,7 +6,6 @@ import { useProgress } from '@/hooks/useProgress';
 import { categories } from '@/data/courses';
 import StreakCalendar from '@/components/StreakCalendar';
 import MilestoneCard from '@/components/MilestoneCard';
-import MoneyQuote from '@/components/MoneyQuote';
 import LikedLessons from '@/components/LikedLessons';
 import AllNotes from '@/components/AllNotes';
 import WeeklySummary from '@/components/WeeklySummary';
@@ -60,7 +59,6 @@ export default function ProgressClient() {
 
       {/* Quote of the day */}
       <MoneyQuote />
-
       {/* Milestone */}
       <div className="mb-6">
         <MilestoneCard />
